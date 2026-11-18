@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="description" content="Anime All-Stars: la experiencia musical de Power Up Orchestra en Movistar Arena.">
+    <title>Anime All-Stars | Power Up Orchestra</title>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;600;700&family=Oswald:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    
+    <header class="site-header">
+        
+        <nav class="main-nav" aria-label="Navegación principal">
+            <ul class="nav-list">
+                <li class="nav-faq"><a href="index.html#preguntas-frecuentes" target="_blank" rel="noopener">Preguntas frecuentes</a></li>
+                <li><a href="index.html#inicio" target="_blank" rel="noopener"><img class="logo"
+                    src="./CSS/logos, pngs, etc/logo power up.png" alt="Power Up Orchestra"></a></li>
+                <li class="nav-location"><a href="index.html#como-llegar" target="_blank" rel="noopener">Cómo llegar</a></li>
+                <li class="nav-menu-item"><button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="section-menu"><img src="./CSS/logos, pngs, etc/menú hamburguesa.png" alt=""></button><div class="section-menu" id="section-menu"><a href="index.html?view=shop&mobile=1#tienda" target="_blank" rel="noopener">Tienda</a><a href="index.html?view=profile&mobile=1#perfil" target="_blank" rel="noopener">Mi perfil</a></div></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <h1 id="hero-title">Power Up Orchestra <span>presenta</span></h1>
+                <img src="./CSS/logos, pngs, etc/imagen_-_copia-removebg-preview.png" alt="Power Up Orchestra en concierto">
+                <p>Una experiencia musical inspirada<br>en el anime y los videojuegos.</p>
+                <img class="hero-arrow" src="./CSS/logos, pngs, etc/chevron-down-solid.png" alt="Desplazarse hacia abajo">
+            </div>
+        </section>
+
+        <section class="shop section" id="tienda">
+            <div class="shop-heading">
+                <h2>Entradas oficiales</h2>
+                <p>Viví Anime All-Stars como nunca antes</p>
+            </div>
+
+            <div class="checkout-progress" aria-label="Progreso de compra">
+                <span class="progress-step is-active" data-progress="1"><b>1</b> Entradas</span>
+                <span class="progress-line"></span>
+                <span class="progress-step" data-progress="2"><b>2</b> Datos y pago</span>
+                <span class="progress-line"></span>
+                <span class="progress-step" data-progress="3"><b>3</b> Confirmación</span>
+            </div>
+
+            <div class="checkout-panel" data-screen="1">
+                <div class="event-card">
+                    <img src="CSS/imágenes/13.jpg" alt="Anime All-Stars en vivo">
+                    <div><p class="eyebrow">Power Up Orchestra presenta</p><h3>Anime All-Stars</h3><p>Una experiencia musical inspirada en el anime y los videojuegos.</p><p class="event-meta">Sábado 18 de julio de 2026 · 20:00 hs<br>Movistar Arena · Humboldt 450, CABA</p></div>
+                </div>
+                <div class="shop-grid">
+                    <div class="seat-area">
+                        <h3>Elegí tus asientos</h3><p class="muted">Podés elegir hasta 8 asientos.</p>
+                        <div class="stage">ESCENARIO</div><div class="seat-map" id="seat-map" aria-label="Plano interactivo de asientos"></div>
+                        <div class="seat-legend"><span><i class="seat available"></i>Disponible</span><span><i class="seat selected"></i>Seleccionado</span><span><i class="seat occupied"></i>Ocupado</span></div>
+                        <p class="seat-message" id="seat-message" role="status"></p>
+                    </div>
+                    <aside class="order-summary"><h3>Resumen</h3><div class="summary-row"><span>Entradas</span><strong id="ticket-count">0</strong></div><div class="summary-row"><span>Precio por entrada</span><strong>$ 45.000</strong></div><div class="summary-row"><span>Asientos</span><strong id="selected-seats">—</strong></div><hr><div class="summary-row total"><span>Total</span><strong id="ticket-total">$ 0</strong></div><button class="primary-button" id="to-payment" disabled>Continuar con el pago</button></aside>
+                </div>
+            </div>
+
+            <div class="checkout-panel is-hidden" data-screen="2">
+                <div class="shop-grid payment-grid"><form id="purchase-form" class="purchase-form"><h3>Datos del comprador</h3><div class="form-row"><label>Nombre y apellido<input name="buyerName" type="text" autocomplete="name" required></label><label>Correo electrónico<input name="buyerEmail" type="email" autocomplete="email" required></label></div><label>Documento de identidad<input name="buyerId" type="text" required></label><h3>Método de pago</h3><div class="payment-methods"><label><input type="radio" name="payment" value="Tarjeta de crédito" checked><span>💳 Tarjeta de crédito</span></label><label><input type="radio" name="payment" value="Tarjeta de débito"><span>💳 Tarjeta de débito</span></label><label><input type="radio" name="payment" value="Mercado Pago"><span>📱 Mercado Pago</span></label></div><div id="card-fields" class="card-fields"><label>Número de tarjeta<input type="text" inputmode="numeric" placeholder="0000 0000 0000 0000" required></label><div class="form-row"><label>Titular<input type="text" required></label><label>Vencimiento<input type="text" placeholder="MM/AA" required></label><label>Código de seguridad<input type="text" inputmode="numeric" required></label></div></div><label class="terms"><input type="checkbox" required> Acepto los términos y condiciones de la compra demostrativa.</label><div class="form-actions"><button type="button" class="secondary-button" id="back-to-seats">Volver</button><button class="primary-button" type="submit">Confirmar compra</button></div></form><aside class="order-summary"><h3>Tu compra</h3><div id="payment-summary"></div></aside></div>
+            </div>
+
+            <div class="checkout-panel confirmation-panel is-hidden" data-screen="3"><div class="success-icon">✓</div><p class="eyebrow">Operación demostrativa</p><h3>¡Tu compra fue confirmada!</h3><p>Guardamos tus entradas en tu perfil.</p><div class="confirmation-card" id="confirmation-detail"></div><div class="digital-tickets" id="digital-tickets"></div><div class="form-actions"><button class="secondary-button" id="go-profile">Ver mis entradas</button><a class="primary-button" href="index.html">Volver al inicio</a></div></div>
+        </section>
+
+        <section class="profile section" id="perfil">
+            <div class="shop-heading"><p class="eyebrow">Área personal</p><h2>Mi perfil</h2><p>Consultá tus datos y el historial de entradas adquiridas.</p></div>
+            <div class="profile-card"><div class="avatar">PU</div><div><h3>Alex Fernández</h3><p id="profile-email">alex.fernandez@email.com</p><button class="text-button" id="edit-profile" type="button">Editar datos</button></div></div>
+            <div class="purchases"><div class="purchases-heading"><h3>Mis compras</h3><a class="secondary-button" href="index.html?view=shop&mobile=1#tienda" target="_blank" rel="noopener">Ir a la tienda</a></div><div id="purchase-history" class="purchase-history"></div></div>
+        </section>
+
+        
+        <article>
+            
+            <section class="about section" id="descripcion">
+                <div class="description-text">
+                    <h2 id="about-title">Sobre el evento</h2>
+                    <p>Power Up Orchestra llega al Movistar Arena con <strong>Anime All-Stars</strong>, la experiencia
+                        internacional de cultura pop que reúne una gran orquesta sinfónica, banda de rock, invitados
+                        internacionales y una impactante producción audiovisual.</p>
+                    <p>Con 15 años de trayectoria, el proyecto presentará un recorrido por las canciones más
+                        emblemáticas de <strong>Dragon Ball, One Piece, Pokémon, Digimon, Caballeros del Zodiaco,
+                            Naruto, Attack on Titan, Sailor Moon, Evangelion y videojuegos</strong>. Además, contará con
+                        la participación especial de Hiroki Takahashi (Dragon Ball), Ayumi Miyazaki (Digimon), Rodrigo
+                        Zea (Pokémon Latinoamérica) y César Franco (Digimon Latinoamérica), quienes interpretarán
+                        versiones exclusivas junto a la orquesta.</p>
+                    <p>Pantallas gigantes, iluminación sincronizada y efectos visuales de última generación completarán
+                        una experiencia inmersiva e inolvidable para fanáticos de todas las generaciones.</p>
+                </div>
+
+                
+                <div class="gallery">
+                    <figure class="gallery-item gallery-item--1"><img src="CSS/imágenes/galería_imágen1.jfif"
+                            alt="Orquesta Power Up Orchestra en escena" loading="lazy"></figure>
+                    <figure class="gallery-item gallery-item--2"><img src="CSS/imágenes/galería_imágen4.jpg"
+                            alt="Público disfrutando del concierto" loading="lazy"></figure>
+                    <figure class="gallery-item gallery-item--3"><img src="CSS/imágenes/galería_imágen5.jpg"
+                            alt="Músicos durante la presentación" loading="lazy"></figure>
+                    <figure class="gallery-item gallery-item--4"><img src="CSS/imágenes/galería_imágen3.jpg"
+                            alt="Espectáculo audiovisual del evento" loading="lazy"></figure>
+                </div>
+
+                
+                <div class="special-guests">
+                    <h2>Invitados especiales</h2>
+
+                    
+                    <div class="guests-list">
+                        <article class="guest-card">
+                            <img src="CSS/imágenes/cesar franco.jpg" alt="César Franco" loading="lazy">
+                            <h3>César Franco</h3>
+                            <p>Voz de Digimon Latinoamérica</p>
+                        </article>
+
+                        <article class="guest-card">
+                            <img src="CSS/imágenes/hiroki takahashi.webp" alt="Hiroki Takahashi" loading="lazy">
+                            <h3>Hiroki Takahashi</h3>
+                            <p>Voz de Dragon Ball</p>
+                        </article>
+
+                        <article class="guest-card">
+                            <img src="CSS/imágenes/miyazaki.png" alt="Ayumi Miyazaki" loading="lazy">
+                            <h3>Ayumi Miyazaki</h3>
+                            <p>Voz de Digimon</p>
+                        </article>
+
+                        <article class="guest-card">
+                            <img src="CSS/imágenes/rodrigo zea.png" alt="Rodrigo Zea" loading="lazy">
+                            <h3>Rodrigo Zea</h3>
+                            <p>Voz de Pokémon Latinoamérica</p>
+                        </article>
+
+                        <article class="guest-card guest-card--surprise">
+                            <div class="surprise-content">
+                                <h3>Invitados <br> sorpresa</h3>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section class="section location" id="como-llegar">
+                <h2 id="location-title">Cómo llegar</h2>
+                <h3>El estadio Movistar Arena cuenta con <strong>tres</strong> ingresos:</h3>
+
+                
+                <div class="location-list">
+                    <div class="location-item"><img src="CSS/logos, pngs, etc/pin locate.png" alt="pin1">
+                        <p>Humboldt 450</p>
+                    </div>
+                    <div class="location-item"><img src="CSS/logos, pngs, etc/pin locate.png" alt="pin2">
+                        <p>Av. Corrientes 6094</p>
+                    </div>
+                    <div class="location-item"><img src="CSS/logos, pngs, etc/pin locate.png" alt="pin3">
+                        <p>Av. Dorrego 489</p>
+                    </div>
+                </div>
+                <aside class="important-note"><img src="CSS/logos, pngs, etc/warning.png" alt="importante">
+                    <p>Tu acceso depende de tu ubicación. Mirá con atención cuál ingreso te corresponde según tu
+                        entrada.</p>
+                </aside>
+
+                
+                <iframe class="map"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13137.526694841763!2d-58.448001!3d-34.594509!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5eb6fb40a93%3A0x1fcab11b62b55896!2sMovistar%20Arena!5e0!3m2!1ses!2sus!4v1790117635351!5m2!1ses!2sus"
+                    title="Ubicación del Movistar Arena en Google Maps" loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </section>
+
+            
+            <section class="section transport" id="medios-de-transporte">
+                <h2 id="transport-title">Medios de transporte</h2>
+                <div class="transport-list">
+                    <div class="transport-item"><img src="CSS/logos, pngs, etc/train.png" alt="tren1">
+                        <p>Tren - <strong>Línea Urquiza</strong><br>Estación Federico Lacroze</p>
+                    </div>
+                    <div class="transport-item"><img src="CSS/logos, pngs, etc/train.png" alt="tren2">
+                        <p>Tren - <strong>San Martín</strong><br>Estación Villa Crespo</p>
+                    </div>
+                    <div class="transport-item"><img src="CSS/logos, pngs, etc/bus.png" alt="bus">
+                        <p><strong>Colectivos</strong></p>
+                        <p class="bus-lines">34, 42, 55, 63, 78, 87, 93, 111, 176, 19, 47,<br>65, 71, 76, 90, 99, 108,
+                            109, 110, 127, 166</p>
+                    </div>
+                    <div class="transport-item"><img src="CSS/logos, pngs, etc/train.png" alt="tren3">
+                        <p>Subte - <strong>Línea B</strong><br>Estación Dorrego</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        
+        <section class="faq section" id="preguntas-frecuentes">
+            <h2 id="faq-title">ANTES DE QUE EMPIECE EL SHOW...</h2>
+            <h3>Todo lo que necesitás saber</h3>
+
+            
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>¿Qué es Power Up Orchestra?<span class="faq-plus">+</span></summary>
+                    <p>Power Up Orchestra es una propuesta musical argentina que fusiona diferentes formatos de música
+                        en vivo para interpretar repertorios vinculados al anime, los videojuegos y la cultura pop.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>¿Necesito conocer anime para disfrutar del show?<span class="faq-plus">+</span></summary>
+                    <p>No. La propuesta está pensada tanto para fans de las franquicias como para quienes simplemente
+                        disfrutan de la música en vivo y los espectáculos audiovisuales.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>¿Puedo ir con cosplay?<span class="faq-plus">+</span></summary>
+                    <p>Sí, podés disfrutar del evento con cosplay, siempre respetando las normas de seguridad y los
+                        elementos permitidos dentro del recinto.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>¿Qué pasa si nunca fui a un concierto de anime?<span class="faq-plus">+</span></summary>
+                    <p>No necesitás experiencia previa. Podés disfrutar del espectáculo aunque no conozcas todos los
+                        títulos incluidos.</p>
+                </details>
+
+                <details class="faq-item">
+                    <summary>¿Qué puedo esperar del espectáculo?<span class="faq-plus">+</span></summary>
+                    <p>Una experiencia que combina música en vivo, orquesta, rock, voces y una puesta audiovisual
+                        inspirada en el universo del anime y los videojuegos.</p>
+                </details>
+            </div>
+        </section>
+
+        
+        <section class="contact section" id="contacto">
+            <h2 id="contact-title">Contacto</h2>
+            <form class="contact-form">
+                
+                <label for="name">Nombre</label><input id="name" name="name" type="text" placeholder="Nombre"
+                    autocomplete="name" required>
+                <label for="email">Email</label><input id="email" name="email" type="email" placeholder="Email"
+                    autocomplete="email" required>
+                <label for="subject">Asunto</label><input id="subject" name="subject" type="text" placeholder="Asunto"
+                    required>
+                <label for="message">Mensaje</label><textarea id="message" name="message" placeholder="Mensaje"
+                    required></textarea>
+                <button type="submit">Enviar mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    
+    <footer class="site-footer">
+        <div class="footer-content">
+            
+            <img class="footer-logo" src="CSS/logos, pngs, etc/logo power up.png" alt="Power Up Orchestra">
+
+            <div class="footer-social">
+                <p>Seguinos en nuestras redes!</p>
+                
+                <div class="social-links">
+                    <a href="https://www.instagram.com/poweruporchestra/" target="_blank"><img
+                            src="CSS/logos, pngs, etc/instagram-brands-solid-full.svg" alt="Instagram"></a>
+                    <a href="https://www.facebook.com/poweruporchestra" target="_blank"><img
+                            src="CSS/logos, pngs, etc/square-facebook-brands-solid-full.svg" alt="Facebook"></a>
+                    <a href="https://www.youtube.com/powerupmusica" target="_blank"><img
+                            src="CSS/logos, pngs, etc/youtube-brands-solid-full.svg" alt="YouTube"></a>
+                    <a href="https://open.spotify.com/intl-es/artist/37Ti3i3wOVxB2ILXC7u8mi" target="_blank"><img
+                            src="CSS/logos, pngs, etc/spotify-brands-solid-full.svg" alt="Spotify"></a>
+                </div>
+            </div>
+        </div>
+
+        
+        <small>Power Up Orchestra - 2026</small>
+    </footer>
+</body>
+
+<script>
+    const requestedParams = new URLSearchParams(window.location.search);
+    const requestedView = requestedParams.get("view");
+    const requestedMobile = requestedParams.get("mobile") === "1";
+    if (requestedView === "shop") document.body.classList.add("standalone-shop");
+    if (requestedView === "profile") document.body.classList.add("standalone-profile");
+    document.addEventListener("DOMContentLoaded", () => { const terms = document.querySelector(".terms"); if (terms) terms.lastChild.textContent = " Acepto los términos y condiciones."; });
+    document.addEventListener("DOMContentLoaded", () => { document.querySelectorAll("input[name=payment]").forEach(input => { const isMercadoPago = input.value === "Mercado Pago", icon = isMercadoPago ? "mercadopago-logo.webp" : "credit-card-solid.png", iconClass = isMercadoPago ? "mercadopago-icon" : ""; input.nextElementSibling.innerHTML = `<img class="${iconClass}" src="CSS/logos, pngs, etc/${icon}" alt=""> ${input.value}`; }); });
+    document.addEventListener("DOMContentLoaded", () => { const confirmation = document.querySelector(".confirmation-panel"); if (confirmation) { confirmation.querySelector(".eyebrow").remove(); confirmation.querySelector("h3").textContent = "Ya compraste tus entradas!"; confirmation.querySelector("h3").nextElementSibling.textContent = "Podes encontrar tus entradas en tu perfil"; } });
+    document.addEventListener("DOMContentLoaded", () => { const confirmationDetail = document.querySelector("#confirmation-detail"); if (confirmationDetail) new MutationObserver(() => confirmationDetail.querySelectorAll("strong").forEach(label => { if (label.textContent.trim() === "Compra:") label.textContent = "Fecha de compra:"; })).observe(confirmationDetail, { childList: true, subtree: true }); });
+    document.addEventListener("DOMContentLoaded", () => { const profileEyebrow = document.querySelector(".profile > .shop-heading .eyebrow"); if (profileEyebrow) profileEyebrow.remove(); });
+    document.addEventListener("DOMContentLoaded", () => { const profileSubtitle = document.querySelector(".profile > .shop-heading h2 + p"); if (profileSubtitle) profileSubtitle.textContent = "Consultá tus datos e historial de entradas"; });
+    document.addEventListener("DOMContentLoaded", () => { const menu = document.querySelector("#section-menu"); if (menu && !menu.querySelector(".home-menu-link")) { const homeLink = document.createElement("a"); homeLink.className = "home-menu-link"; homeLink.href = "index.html"; homeLink.textContent = "INICIO"; menu.prepend(homeLink); } });
+    document.addEventListener("DOMContentLoaded", () => { const purchasesHeading = document.querySelector(".purchases-heading"), storeLink = purchasesHeading?.querySelector("a"); if (purchasesHeading && storeLink) { const regretButton = document.createElement("button"), actions = document.createElement("div"); regretButton.type = "button"; regretButton.className = "regret-button"; regretButton.textContent = "Botón de arrepentimiento"; actions.className = "purchase-actions"; actions.append(regretButton, storeLink); purchasesHeading.append(actions); } });
+    document.addEventListener("DOMContentLoaded", () => { document.querySelectorAll(".faq-item").forEach(item => { const summary = item.querySelector("summary"), answer = item.querySelector("p"); summary.addEventListener("click", event => { event.preventDefault(); if (item.open) { answer.style.maxHeight = `${answer.scrollHeight}px`; requestAnimationFrame(() => { item.classList.remove("is-open"); answer.style.maxHeight = "0px"; }); setTimeout(() => { item.open = false; }, 350); } else { item.open = true; answer.style.maxHeight = "0px"; item.classList.add("is-open"); requestAnimationFrame(() => { answer.style.maxHeight = `${answer.scrollHeight}px`; }); } }); }); });
+    document.addEventListener("DOMContentLoaded", () => { const avatar = document.querySelector(".avatar"); if (avatar) avatar.textContent = "AF"; });
+    const PRICE = 45000;
+    const STORAGE_KEY = "powerup-purchases";
+    const occupiedSeats = ["A3", "A4", "B1", "C5", "C6", "D2", "E7", "F4"];
+    const state = { selected: [], buyer: {}, payment: "Tarjeta de crédito" };
+    const money = value => `$ ${value.toLocaleString("es-AR")}`;
+    const history = () => JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+    function renderSeats() {
+        const map = document.querySelector("#seat-map"); if (!map) return; map.innerHTML = "";
+        ["A", "B", "C", "D", "E", "F"].forEach(row => { const rowElement = document.createElement("div"); rowElement.className = "seat-row";
+            for (let number = 1; number <= 8; number++) { const id = `${row}${number}`, button = document.createElement("button"); button.type = "button"; button.className = "seat"; button.textContent = number; button.setAttribute("aria-label", `Asiento ${id}`);
+                if (occupiedSeats.includes(id)) { button.classList.add("occupied"); button.disabled = true; } else if (state.selected.includes(id)) button.classList.add("selected"); else button.classList.add("available"); button.addEventListener("click", () => toggleSeat(id)); rowElement.append(button); }
+            const label = document.createElement("span"); label.className = "row-label"; label.textContent = row; rowElement.prepend(label); map.append(rowElement); }); updateSummary();
+    }
+    function toggleSeat(id) { if (state.selected.includes(id)) state.selected = state.selected.filter(seat => seat !== id); else if (state.selected.length < 8) state.selected.push(id); else document.querySelector("#seat-message").textContent = "Podés elegir hasta 8 asientos."; renderSeats(); }
+    function updateSummary() { const count = state.selected.length; document.querySelector("#ticket-count").textContent = count; document.querySelector("#selected-seats").textContent = state.selected.join(", ") || "—"; document.querySelector("#ticket-total").textContent = money(count * PRICE); document.querySelector("#to-payment").disabled = count === 0; document.querySelector("#payment-summary").innerHTML = `<div class="summary-row"><span>Evento</span><strong>Anime All-Stars</strong></div><div class="summary-row"><span>Fecha</span><strong>18/07/2026 · 20:00</strong></div><div class="summary-row"><span>Asientos</span><strong>${state.selected.join(", ")}</strong></div><hr><div class="summary-row total"><span>Total</span><strong>${money(count * PRICE)}</strong></div>`; }
+    function showScreen(number) { document.querySelectorAll("[data-screen]").forEach(panel => panel.classList.toggle("is-hidden", panel.dataset.screen !== String(number))); document.querySelectorAll("[data-progress]").forEach(step => step.classList.toggle("is-active", Number(step.dataset.progress) <= number)); if (number === 2) updateSummary(); }
+    function renderHistory() { const target = document.querySelector("#purchase-history"), purchases = history(); target.innerHTML = purchases.length ? purchases.map(purchase => `<article class="purchase-item"><img src="CSS/imágenes/13.jpg" alt=""><div><p class="eyebrow">${purchase.order}</p><h4>Anime All-Stars</h4><p>18 de julio de 2026 · ${purchase.seats.length} entrada(s) · Asientos ${purchase.seats.join(", ")}</p><strong>${money(purchase.total)}</strong></div><button class="text-button detail-button" data-order="${purchase.order}">Ver detalle</button></article>`).join("") : `<div class="empty-state"><span>🎟️</span><h4>Todavía no tenés compras</h4><p>Cuando confirmes una compra, tus entradas aparecerán acá.</p><a class="primary-button" href="#tienda">Explorar entradas</a></div>`; target.querySelectorAll(".detail-button").forEach(button => button.addEventListener("click", () => alert(`Pedido ${button.dataset.order}: entradas digitales disponibles en tu perfil.`))); }
+    document.addEventListener("DOMContentLoaded", () => { const toggle = document.querySelector("#menu-toggle"), menu = document.querySelector("#section-menu"); toggle.addEventListener("click", () => { const open = menu.classList.toggle("is-open"); toggle.setAttribute("aria-expanded", open); }); document.addEventListener("click", event => { if (!event.target.closest(".nav-menu-item")) menu.classList.remove("is-open"); }); });
+    document.addEventListener("DOMContentLoaded", () => { renderSeats(); renderHistory(); document.querySelector("#to-payment").addEventListener("click", () => showScreen(2)); document.querySelector("#back-to-seats").addEventListener("click", () => showScreen(1)); document.querySelectorAll("input[name=payment]").forEach(input => input.addEventListener("change", event => { state.payment = event.target.value; document.querySelector("#card-fields").classList.toggle("is-hidden", state.payment === "Mercado Pago"); document.querySelectorAll("#card-fields input").forEach(field => field.required = state.payment !== "Mercado Pago"); })); document.querySelector("#purchase-form").addEventListener("submit", event => { event.preventDefault(); const data = new FormData(event.target); state.buyer = Object.fromEntries(data.entries()); const order = `PU-${Date.now().toString().slice(-8)}`, purchase = { order, seats: [...state.selected], total: state.selected.length * PRICE, payment: state.payment, date: new Date().toLocaleDateString("es-AR") }; localStorage.setItem(STORAGE_KEY, JSON.stringify([purchase, ...history()])); document.querySelector("#confirmation-detail").innerHTML = `<p><strong>Pedido:</strong> ${order}</p><p><strong>Evento:</strong> Anime All-Stars</p><p><strong>Fecha y lugar:</strong> 18/07/2026 · 20:00 · Movistar Arena</p><p><strong>Asientos:</strong> ${purchase.seats.join(", ")}</p><p><strong>Total:</strong> ${money(purchase.total)} · ${purchase.payment}</p><p><strong>Compra:</strong> ${purchase.date}</p>`; document.querySelector("#digital-tickets").innerHTML = purchase.seats.map(seat => `<div class="ticket"><span class="fake-qr">▦</span><div><strong>Entrada ${seat}</strong><small>Anime All-Stars · ${order}</small></div></div>`).join(""); renderHistory(); showScreen(3); }); document.querySelector("#go-profile").addEventListener("click", () => requestedView === "shop" ? window.open("index.html?view=profile#perfil", "_blank") : document.querySelector("#perfil").scrollIntoView({ behavior: "smooth" })); document.querySelector("#edit-profile").addEventListener("click", () => { const name = prompt("Nombre y apellido", "Alex Fernández"); if (name) document.querySelector(".profile-card h3").textContent = name; }); });
+</script>
+</html>
